@@ -181,6 +181,7 @@ if rap_prom is not None or ipra is not None:
                                         data=df_xlsx ,
                                         file_name= 'P+ vs IPRA_{}.xlsx'.format(data))
         ############################################################
+        st.markdown('---')
         st.header('Wizualizacja danych - dodatkowa analiza')
         
         ##
@@ -239,7 +240,7 @@ if rap_prom is not None or ipra is not None:
                         opacity = 0.4
                     )
                 ]))
-
+        st.markdown('---')
         l1, r1 = st.columns([1,1])
         
         with l1:
@@ -249,5 +250,5 @@ if rap_prom is not None or ipra is not None:
             st.plotly_chart(px.histogram(nowy2['Rabat EO'],text_auto=True,marginal='box'))
             st.plotly_chart(px.histogram(nowy1['Rabat IPRA BWH'],text_auto=True,marginal='box'))
     except Exception as e:
-        st.write('Czekam na dane',print(e))
+        st.write('Czekam na dane')
         
