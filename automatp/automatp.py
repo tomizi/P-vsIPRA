@@ -240,7 +240,7 @@ if rap_prom is not None or ipra is not None:
                     )
                 ]))
 
-        l1, m1, m2, r1 = st.columns([4,4,4,1],gap='medium')
+        l1, m1, m2, r1 = st.columns([4,4,4,1])
         
         with l1:
             st.plotly_chart(px.histogram(nowy['Rabat Promocyjny'],text_auto=True,marginal='box'))
