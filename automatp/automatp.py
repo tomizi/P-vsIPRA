@@ -181,8 +181,8 @@ if rap_prom is not None or ipra is not None:
                                         data=df_xlsx ,
                                         file_name= 'P+ vs IPRA_{}.xlsx'.format(data))
         ############################################################
-        st.markdown('---')
         st.header('Wizualizacja danych - dodatkowa analiza')
+        st.markdown('---')
         
         ##
         nowy=PWHA[~PWHA['Rabat IPRA WHA'].isna()]
@@ -203,7 +203,7 @@ if rap_prom is not None or ipra is not None:
         nowy2=PWHA[~PWHA['Rabat EO'].isna()]
         
         nowy2['Rabat EO']=nowy2['Rabat EO']*100
-        nowy2['Rabat Promocyjny']=nowy2['Rabat Promocyjny']*100
+        nowy2['Rabat IPRA WHA']=nowy2['Rabat IPRA WHA']*100
         
         ##
         
@@ -231,7 +231,7 @@ if rap_prom is not None or ipra is not None:
                     )
                 ]))
             with r:
-                st.plotly_chart(px.scatter(nowy2,x='Rabat EO',y='Rabat Promocyjny').update_layout(
+                st.plotly_chart(px.scatter(nowy2,x='Rabat EO',y='Rabat IPRA WHA').update_layout(
                 shapes=[
                     dict(
                         type= 'line',
@@ -247,8 +247,9 @@ if rap_prom is not None or ipra is not None:
             st.plotly_chart(px.histogram(nowy['Rabat Promocyjny'],text_auto=True,marginal='box'))
             st.plotly_chart(px.histogram(nowy['Rabat IPRA WHA'],text_auto=True,marginal='box'))
         with r1:
-            st.plotly_chart(px.histogram(nowy2['Rabat EO'],text_auto=True,marginal='box'))
             st.plotly_chart(px.histogram(nowy1['Rabat IPRA BWH'],text_auto=True,marginal='box'))
+            st.plotly_chart(px.histogram(nowy2['Rabat EO'],text_auto=True,marginal='box'))
+            
     except Exception as e:
         st.write('Czekam na dane')
         
