@@ -210,26 +210,26 @@ if rap_prom is not None or ipra is not None:
                     opacity = 0.4
                 )
             ]))
-         with m:
-            st.plotly_chart(px.scatter(nowy1,x='Rabat IPRA BWH',y='Rabat Promocyjny').update_layout(
-            shapes=[
-                dict(
-                    type= 'line',
-                    yref= 'y', y0=0, y1= 50,
-                    xref= 'x', x0=0, x1= 50,
-                    opacity = 0.4
-                )
-            ]))
+        with m:
+        st.plotly_chart(px.scatter(nowy1,x='Rabat IPRA BWH',y='Rabat Promocyjny').update_layout(
+        shapes=[
+            dict(
+                type= 'line',
+                yref= 'y', y0=0, y1= 50,
+                xref= 'x', x0=0, x1= 50,
+                opacity = 0.4
+            )
+        ]))
         with r:
-            st.plotly_chart(px.scatter(nowy2,x='Rabat EO',y='Rabat Promocyjny').update_layout(
-            shapes=[
-                dict(
-                    type= 'line',
-                    yref= 'y', y0=0, y1= 50,
-                    xref= 'x', x0=0, x1= 50,
-                    opacity = 0.4
-                )
-            ]))
+        st.plotly_chart(px.scatter(nowy2,x='Rabat EO',y='Rabat Promocyjny').update_layout(
+        shapes=[
+            dict(
+                type= 'line',
+                yref= 'y', y0=0, y1= 50,
+                xref= 'x', x0=0, x1= 50,
+                opacity = 0.4
+            )
+        ]))
             
             
         st.plotly_chart(px.histogram(nowy['Rabat Promocyjny'],text_auto=True,marginal='box'))
