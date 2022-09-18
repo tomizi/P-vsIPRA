@@ -213,8 +213,8 @@ if rap_prom is not None or ipra is not None:
                 shapes=[
                     dict(
                         type= 'line',
-                        yref= 'y', y0=0, y1= 50,
-                        xref= 'x', x0=0, x1= 50,
+                        yref= 'y', y0=0, y1= 100,
+                        xref= 'x', x0=0, x1= 100,
                         opacity = 0.4
                     )
                 ]))
@@ -224,8 +224,8 @@ if rap_prom is not None or ipra is not None:
                 shapes=[
                     dict(
                         type= 'line',
-                        yref= 'y', y0=0, y1= 50,
-                        xref= 'x', x0=0, x1= 50,
+                        yref= 'y', y0=0, y1= 100,
+                        xref= 'x', x0=0, x1= 100,
                         opacity = 0.4
                     )
                 ]))
@@ -234,13 +234,13 @@ if rap_prom is not None or ipra is not None:
                 shapes=[
                     dict(
                         type= 'line',
-                        yref= 'y', y0=0, y1= 50,
-                        xref= 'x', x0=0, x1= 50,
+                        yref= 'y', y0=0, y1= 100,
+                        xref= 'x', x0=0, x1= 100,
                         opacity = 0.4
                     )
                 ]))
 
-        l1, m1, m2, r1 = st.columns([1,1,1,1])
+        l1, m1, m2, r1 = st.columns([1.5,1.5,1.5,1])
         
         with l1:
             st.plotly_chart(px.histogram(nowy['Rabat Promocyjny'],text_auto=True,marginal='box'))
