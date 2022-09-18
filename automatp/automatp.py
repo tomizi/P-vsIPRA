@@ -206,7 +206,7 @@ if rap_prom is not None or ipra is not None:
         
         ##
         
-        l, m, r = st.columns([3,1,2])
+        l, m, r = st.columns([2,2,1])
         with st.container():
             with l:
                 st.plotly_chart(px.scatter(nowy,x='Rabat IPRA WHA',y='Rabat Promocyjny').update_layout(
