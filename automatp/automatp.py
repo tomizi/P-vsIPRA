@@ -146,12 +146,15 @@ if rap_prom is not None or ipra is not None:
                                     'P+ BWH':[int(c2),int(w2),100*w2/c2],
                                     'EO vs P+ WHA':[int(c3),int(w3),100*w3/c3]})
         ############################################################
-        
-        st.write('Podsumowanie')
-        st.dataframe(podsumowanie.style.format({'P+ WHA': '{:.0f}', 'P+ BWH': '{:.0f}', 'EO vs P+ WHA': '{:.0f}'}))
-        
-        st.write('P+ vs WHA')
+        st.subheader('P+ vs WHA')
         st.dataframe(PWHA.style.format({'Rabat Promocyjny': '{:.2f}','Rabat IPRA WHA': '{:.2f}','Rabat EO': '{:.2f}'}))
+        
+        st.subheader('P+ vs BWH')
+        st.dataframe(PBWH.style.format({'Rabat Promocyjny': '{:.2f}','Rabat IPRA WHA': '{:.2f}','Rabat EO': '{:.2f}'}))
+        
+        
+        st.subheader('Podsumowanie')
+        st.dataframe(podsumowanie.style.format({'P+ WHA': '{:.0f}', 'P+ BWH': '{:.0f}', 'EO vs P+ WHA': '{:.0f}'}))
         
         ############################################################
         
@@ -169,9 +172,11 @@ if rap_prom is not None or ipra is not None:
             processed_data = output.getvalue()
             return processed_data
         df_xlsx = to_excel()
+        
+        data = st.text_input('Podaj dzisiejszą datę',' ')
         st.download_button(label='Pobierz plik .xlsx',
                                         data=df_xlsx ,
-                                        file_name= 'P+ vs IPRA_14_09.xlsx')
+                                        file_name= 'P+ vs IPRA_{}.xlsx'.format(data))
         ############################################################
         
         nowy=PWHA[~PWHA['Rabat IPRA WHA'].isna()]
