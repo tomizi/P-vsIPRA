@@ -244,11 +244,11 @@ if rap_prom is not None or ipra is not None:
         
         with l1:
             st.plotly_chart(px.histogram(nowy['Rabat Promocyjny'],text_auto=True,marginal='box'))
-        with l2:
+        with m1:
             st.plotly_chart(px.histogram(nowy['Rabat IPRA WHA'],text_auto=True,marginal='box'))
-        with l3:
+        with m2:
             st.plotly_chart(px.histogram(nowy1['Rabat IPRA BWH'],text_auto=True,marginal='box'))
-        with l4:
+        with r1:
             st.plotly_chart(px.histogram(nowy2['Rabat EO'],text_auto=True,marginal='box'))
     except Exception as e:
         st.write('Czekam na dane',print(e))
