@@ -14,6 +14,8 @@ import xlsxwriter
 from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
 
+st.set_page_config(page_title='Raport porównanie', page_icon = ':page_facing_up:', layout='wide')
+
 st.set_option('deprecation.showfileUploaderEncoding',False)
 
 st.title(':page_with_curl: Raport P+ vs IPRA')
