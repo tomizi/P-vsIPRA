@@ -198,7 +198,7 @@ if rap_prom is not None or ipra is not None:
         nowy2['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
         
         ##
-        l, m, r = st.columns(3)
+        l, m, r = st.columns(1,1,1)
         
         with l:
             st.plotly_chart(px.scatter(nowy,x='Rabat IPRA WHA',y='Rabat Promocyjny').update_layout(
