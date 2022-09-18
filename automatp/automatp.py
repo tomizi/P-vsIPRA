@@ -16,9 +16,9 @@ from pyxlsb import open_workbook as open_xlsb
 
 st.set_option('deprecation.showfileUploaderEncoding',False)
 
-st.title('Wszystkie pliki')
+st.title(':page_with_curl: Raport P+ vs IPRA')
 
-st.sidebar.subheader('Ustawienia')
+st.sidebar.subheader(':open_file_folder: Wprowadź pliki')
 
 ###
 rap_prom = st.sidebar.file_uploader(label='Raport Promocji', type=['csv'])
