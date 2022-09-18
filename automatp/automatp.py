@@ -174,10 +174,12 @@ if rap_prom is not None or ipra is not None:
         df_xlsx = to_excel()
         
         data = st.text_input('Podaj dzisiejszą datę',' ')
-        st.download_button(label='Pobierz plik .xlsx',
+        st.download_button(label='Pobierz plik "P+ vs IPRA_{}.xlsx"'.format(data),
                                         data=df_xlsx ,
                                         file_name= 'P+ vs IPRA_{}.xlsx'.format(data))
         ############################################################
+        st.header('Wizualizacja danych - dodatkowa analiza')
+        
         
         nowy=PWHA[~PWHA['Rabat IPRA WHA'].isna()]
         
