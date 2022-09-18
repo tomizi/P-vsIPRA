@@ -187,20 +187,22 @@ if rap_prom is not None or ipra is not None:
         nowy['Rabat IPRA WHA']=nowy['Rabat IPRA WHA']*100
         nowy['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
         ##
-        '''
+        
         nowy1=PBWH[~PBWH['Rabat IPRA BWH'].isna()]
         
         nowy1['Rabat IPRA BWH']=nowy['Rabat IPRA BWH']*100
         nowy1['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
         ##
+        
+        '''
         nowy2=PWHA[~PWHA['Rabat EO'].isna()]
         
         nowy2['Rabat EO']=nowy['Rabat EO']*100
         nowy2['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
         '''
         ##
-        #l, m, r = st.columns(3)
-        '''
+        l, m, r = st.columns(3)
+        
         with l:
             st.plotly_chart(px.scatter(nowy,x='Rabat IPRA WHA',y='Rabat Promocyjny').update_layout(
             shapes=[
@@ -211,6 +213,7 @@ if rap_prom is not None or ipra is not None:
                     opacity = 0.4
                 )
             ]))
+        '''
         with m:
             st.plotly_chart(px.scatter(nowy1,x='Rabat IPRA BWH',y='Rabat Promocyjny').update_layout(
             shapes=[
