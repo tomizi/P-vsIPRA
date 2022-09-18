@@ -183,11 +183,11 @@ if rap_prom is not None or ipra is not None:
         
         ##
         nowy=PWHA[~PWHA['Rabat IPRA WHA'].isna()]
-        
+        nowy
         nowy['Rabat IPRA WHA']=nowy['Rabat IPRA WHA']*100
         nowy['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
         
-        nowy
+        
         ##
         
         nowy1=PBWH[~PBWH['Rabat IPRA BWH'].isna()]
