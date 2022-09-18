@@ -183,7 +183,7 @@ if rap_prom is not None or ipra is not None:
         
         ##
         nowy=PWHA[~PWHA['Rabat IPRA WHA'].isna()]
-        nowy
+        
         nowy['Rabat IPRA WHA']=nowy['Rabat IPRA WHA']*100
         nowy['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
         
@@ -196,12 +196,12 @@ if rap_prom is not None or ipra is not None:
         #nowy1['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
         ##
         
-        '''
+        
         nowy2=PWHA[~PWHA['Rabat EO'].isna()]
         
         nowy2['Rabat EO']=nowy['Rabat EO']*100
         nowy2['Rabat Promocyjny']=nowy['Rabat Promocyjny']*100
-        '''
+        
         ##
         '''
         l, m, r = st.columns(3)
