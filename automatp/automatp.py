@@ -199,7 +199,7 @@ if rap_prom is not None or ipra is not None:
         
         ##
         l, m, r = st.columns(1,1,1)
-        
+        '''
         with l:
             st.plotly_chart(px.scatter(nowy,x='Rabat IPRA WHA',y='Rabat Promocyjny').update_layout(
             shapes=[
@@ -231,7 +231,7 @@ if rap_prom is not None or ipra is not None:
                 )
             ]))
             
-            
+        '''    
         st.plotly_chart(px.histogram(nowy['Rabat Promocyjny'],text_auto=True,marginal='box'))
         
         st.plotly_chart(px.histogram(nowy['Rabat IPRA WHA'],text_auto=True,marginal='box'))
