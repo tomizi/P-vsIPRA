@@ -201,5 +201,5 @@ if rap_prom is not None or ipra is not None:
         
         st.plotly_chart(px.histogram(nowy['Rabat IPRA WHA'],text_auto=True,marginal='box'))
     except Exception as e:
-        st.write('Czekam na dane',str(e))
+        st.write('Czekam na dane')
         
