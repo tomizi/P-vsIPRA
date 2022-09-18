@@ -156,6 +156,7 @@ if rap_prom is not None or ipra is not None:
         st.subheader('Podsumowanie')
         st.dataframe(podsumowanie.style.format({'P+ WHA': '{:.0f}', 'P+ BWH': '{:.0f}', 'EO vs P+ WHA': '{:.0f}'}))
         
+        st.balloons()
         ############################################################
         
         def to_excel():
