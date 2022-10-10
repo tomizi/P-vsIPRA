@@ -39,6 +39,7 @@ if file is not None:
             Suma_końcowa[str(i)]=sum(piv[str(i)])
         piv.loc['Suma końcowa'] = Suma_końcowa
         st.dataframe(piv.style.format('{:.2f}'))
+        piv=piv.reset_index()
         st.download_button(label = 'Pobierz Raport RPM PKMH', data = piv.to_csv(index=False,encoding = 'utf-8'),file_name = 'Raport RPM RKMH.csv', mime = "text/csv")
 
     except Exception as e:
