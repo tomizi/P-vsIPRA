@@ -147,7 +147,27 @@ if rap_prom is not None or ipra is not None:
                                      'P+ WHA':[int(c1),int(w1),100*w1/c1],
                                     'P+ BWH':[int(c2),int(w2),100*w2/c2],
                                     'EO vs P+ WHA':[int(c3),int(w3),100*w3/c3]})
-        ############################################################
+        
+        ###Podsumowanie IPRA(drugi pliki)###
+        IPRA_BWH=IPRA_BWH.join(PBWH.iloc[:,[5,8]].set_index('Id Materiału'),on ='Indeks')
+        IPRA_BWH=IPRA_BWH.join(PBWH.iloc[:,[5,9]].set_index('Id Materiału'),on ='Indeks')
+
+        IPRA_BWH=IPRA_BWH.rename(columns={'Rabat IPRA BWH':'RABAT P+ BWH'})
+        
+        
+        IPRA_WHA=IPRA_WHA.join(PWHA.iloc[:,[5,8]].set_index('Id Materiału'),on ='Indeks')
+        IPRA_WHA=IPRA_WHA.join(PWHA.iloc[:,[5,10]].set_index('Id Materiału'),on ='Indeks')
+
+        IPRA_WHA=IPRA_WHA.rename(columns={'Rabat IPRA WHA':'RABAT P+ WHA'})
+        
+        
+        IPRA_EO=IPRA_EO.join(PWHA.iloc[:,[5,9]].set_index('Id Materiału'),on ='Indeks')
+
+        IPRA_EO=IPRA_EO.rename(columns={'Rabat EO':'RABAT P+'})
+        
+        
+        
+        ############################Tabelki pierwszy plik (P+ vs IPRA)################################
         st.subheader('P+ vs WHA')
         st.dataframe(PWHA.style.format({'Rabat Promocyjny': '{:.2f}','Rabat IPRA WHA': '{:.2f}','Rabat EO': '{:.2f}'}))
         
@@ -159,7 +179,7 @@ if rap_prom is not None or ipra is not None:
         st.dataframe(podsumowanie.style.format({'P+ WHA': '{:.0f}', 'P+ BWH': '{:.0f}', 'EO vs P+ WHA': '{:.0f}'}))
         
         st.balloons()
-        ############################################################
+        ##########################plik pierwszy(P+ vs IPRA)##################################
         
         def to_excel():
             output = BytesIO()
@@ -180,6 +200,38 @@ if rap_prom is not None or ipra is not None:
         st.download_button(label='Pobierz plik "P+ vs IPRA_{}.xlsx"'.format(data),
                                         data=df_xlsx ,
                                         file_name= 'P+ vs IPRA_{}.xlsx'.format(data))
+        
+        st.markdown('---')
+        ########################Tabelki drugi plik(Podsumowanie IPRA)####################################
+        st.subheader('IPRA WHA')
+        st.dataframe(IPRA_WHA.style.format({'IPRA_EO WHA': '{:.2f}','IPRA WHA vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
+        
+        st.subheader('IPRA BWH')
+        st.dataframe(IPRA_BWH.style.format({'RABAT P+ BWH': '{:.2f}','IPRA BWH vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
+        
+        
+        st.subheader('IPRA EO')
+        st.dataframe(IPRA_EO.style.format({'IPRA_EO': '{:.2f}', 'Rabat IPRA': '{:.0f}'}))
+        ############################################################
+        def to_excel():
+            output = BytesIO()
+            writer = pd.ExcelWriter(output, engine='xlsxwriter')
+            IPRA_WHA.to_excel(writer, sheet_name='IPRA WHA',index=False)
+            IPRA_BWH.to_excel(writer, sheet_name='IPRA BWH',index=False)
+            IPRA_EO.to_excel(writer, sheet_name='IPRA EO',index=False)
+            podsumowanie.to_excel(writer, sheet_name = 'Podsumowanie', index=False)
+            workbook = writer.book
+            #worksheet = writer.sheets
+            format1 = workbook.add_format({'num_format': '0.00'}) 
+            #worksheet.set_column('A:A', None, format1)  
+            writer.save()
+            processed_data = output.getvalue()
+            return processed_data
+        df_xlsx = to_excel()
+        
+        st.download_button(label='Pobierz plik "Oferta IPRA_{}.xlsx"'.format(data),
+                                        data=df_xlsx ,
+                                        file_name= 'Oferta IPRA_{}.xlsx'.format(data))
         ############################################################
         st.header('Wizualizacja danych - dodatkowa analiza')
         st.markdown('---')
