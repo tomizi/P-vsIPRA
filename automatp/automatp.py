@@ -204,7 +204,7 @@ if rap_prom is not None or ipra is not None:
         st.markdown('---')
         ########################Tabelki drugi plik(Podsumowanie IPRA)####################################
         st.subheader('IPRA WHA')
-        st.dataframe(IPRA_WHA.style.format({'IPRA_EO WHA': '{:.2f}','IPRA WHA vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
+        #st.dataframe(IPRA_WHA.style.format({'IPRA_EO WHA': '{:.2f}','IPRA WHA vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
         
         st.subheader('IPRA BWH')
         st.dataframe(IPRA_BWH.style.format({'RABAT P+ BWH': '{:.2f}','IPRA BWH vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
