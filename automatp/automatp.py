@@ -159,7 +159,7 @@ if rap_prom is not None or ipra is not None:
         IPRA_WHA=IPRA_WHA.join(PWHA.iloc[:,[5,10]].set_index('Id Materiału'),on ='Indeks')
 
         IPRA_WHA=IPRA_WHA.rename(columns={'Rabat IPRA WHA':'RABAT P+ WHA'})
-        IPRA_WHA
+       
         
         IPRA_EO=IPRA_EO.join(PWHA.iloc[:,[5,9]].set_index('Id Materiału'),on ='Indeks')
 
