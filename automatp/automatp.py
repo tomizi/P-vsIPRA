@@ -207,11 +207,11 @@ if rap_prom is not None or ipra is not None:
         #st.dataframe(IPRA_WHA.style.format({'IPRA_EO WHA': '{:.2f}','IPRA WHA vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
         
         st.subheader('IPRA BWH')
-        st.dataframe(IPRA_BWH.style.format({'RABAT P+ BWH': '{:.2f}','IPRA BWH vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
+        st.dataframe(IPRA_BWH.style.format({'RABAT P+ BWH': '{:.2f}','IPRA BWH vs P+': '{:.3f}','Rabat IPRA': '{:.3f}'}))
         
         
         st.subheader('IPRA EO')
-        st.dataframe(IPRA_EO.style.format({'IPRA_EO': '{:.2f}', 'Rabat IPRA': '{:.0f}'}))
+        st.dataframe(IPRA_EO.style.format({'RABAT P+': '{:.2f}', 'Rabat IPRA': '{:.2f}'}))
         ############################################################
         def to_excel():
             output = BytesIO()
