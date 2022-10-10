@@ -159,6 +159,7 @@ if rap_prom is not None or ipra is not None:
         IPRA_WHA=IPRA_WHA.join(PWHA.iloc[:,[5,10]].set_index('Id Materiału'),on ='Indeks')
 
         IPRA_WHA=IPRA_WHA.rename(columns={'Rabat IPRA WHA':'RABAT P+ WHA'})
+        IPRA_WHA['data rozpoczęcia promocji'] = pd.to_datetime(IPRA_WHA['data rozpoczęcia promocji'])
        
         
         IPRA_EO=IPRA_EO.join(PWHA.iloc[:,[5,9]].set_index('Id Materiału'),on ='Indeks')
@@ -204,7 +205,7 @@ if rap_prom is not None or ipra is not None:
         st.markdown('---')
         ########################Tabelki drugi plik(Podsumowanie IPRA)####################################
         st.subheader('IPRA WHA')
-        #st.dataframe(IPRA_WHA.style.format({'IPRA_EO WHA': '{:.2f}','IPRA WHA vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
+        st.dataframe(IPRA_WHA.style.format({'IPRA_EO WHA': '{:.2f}','IPRA WHA vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
         
         st.subheader('IPRA BWH')
         st.dataframe(IPRA_BWH.style.format({'RABAT P+ BWH': '{:.2f}','IPRA BWH vs P+': '{:.3f}','Rabat IPRA': '{:.3f}'}))
