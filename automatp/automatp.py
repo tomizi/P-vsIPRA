@@ -210,7 +210,7 @@ if rap_prom is not None or ipra is not None:
         st.dataframe(IPRA_WHA.style.format({'RABAT P+ WHA': '{:.2f}','IPRA WHA vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
         
         st.subheader('IPRA BWH')
-        st.dataframe(IPRA_BWH.style.format({'RABAT P+ BWH': '{:.2f}','IPRA BWH vs P+': '{:.3f}','Rabat IPRA': '{:.3f}'}))
+        st.dataframe(IPRA_BWH.style.format({'RABAT P+ BWH': '{:.2f}','IPRA BWH vs P+': '{:.2f}','Rabat IPRA': '{:.2f}'}))
         
         
         st.subheader('IPRA EO')
