@@ -36,7 +36,7 @@ if rap_prom is not None or ipra is not None:
         ###
         IPRA_BWH = pd.read_excel(ipra,sheet_name='IPRA BWH')
         IPRA_WHA = pd.read_excel(ipra,sheet_name='IPRA WHA')
-        IPRA_EO  = pd.read_excel(ipra,sheet_name='IPRA EO X')
+        IPRA_EO  = pd.read_excel(ipra,sheet_name='IPRA EO XI')
         ###
         
         ###
