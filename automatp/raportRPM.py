@@ -32,7 +32,7 @@ if file is not None:
         rkmh1=rkmh[~rkmh['Opis'].isin(['Nowa_IPRA','RPM on-line - GRUPONY'])]
         piv = pd.pivot_table(rkmh1,values='Wartość sprzedaży',index='Zlecający promocję A',columns='Nazwa prod. sprzedaży',aggfunc=np.sum).fillna(0)
         piv = piv.reindex(index=['Anna Kruczkowska','Anna Słomka','Edyta Gromadzka','Ewa Domagała','Emilia Kulesza','Halina Lindner','Iwona Molka','Iwona Ratajczak','Joanna Miłoszewska','Katarzyna Kiljańska','Paulina Jukiel','Sylwia Kwasigroch','Paweł Werk','Roman Walkowski',
-                   'Justyna Jaje','Daniel Matyla'])
+                   'Justyna Jaje','Ewelina Dancewicz','Daniel Matyla'])
         Suma_końcowa = dict()
         a = 0
         for i in piv.columns:
