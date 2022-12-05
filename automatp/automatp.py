@@ -18,7 +18,7 @@ st.set_page_config(page_title='Raport porównanie', page_icon = ':page_facing_up
 
 st.set_option('deprecation.showfileUploaderEncoding',False)
 
-st.title(':page_with_curl: Raport P+ vs IPRA...')
+st.title(':page_with_curl: Raport P+ vs IPRA....')
 
 st.sidebar.subheader(':open_file_folder: Wprowadź pliki')
 
