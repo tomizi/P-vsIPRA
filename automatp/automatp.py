@@ -123,13 +123,13 @@ if rap_prom is not None or ipra is not None:
         kolumny_WHA=['Nazwa Promocji','Nr producenta sprzedażowego','Nazwa producenta sprzedażowego',
                  'Skład (SPR,SGL)','Czy dopuszcza rabat kontraktowy','Id Materiału','Nazwa Materiału',
                  'Rabat Promocyjny','Rabat IPRA WHA','Rabat EO','IPRA WHA vs P+','EO vs P+',
-                     'Cena z cennika głównego','identyfikator promocji','data obowiązywania promocji od',
+                     'Cena z cennika głównego','identyfikator promocji','Data obowiązywania promocji od',
                  'Data obowiązywania promocji do','Rodzaj warunku płatnosci','Ilość Klientów','Nazwa grupy promocyjnej',
                  'MPK','Grupa klientów','Czy KDW']
         kolumny_BWH=['Nazwa Promocji','Nr producenta sprzedażowego','Nazwa producenta sprzedażowego',
                  'Skład (SPR,SGL)','Czy dopuszcza rabat kontraktowy','Id Materiału','Nazwa Materiału',
                  'Rabat Promocyjny','Rabat IPRA BWH','IPRA BWH vs P+',
-                     'Cena z cennika głównego','identyfikator promocji','data obowiązywania promocji od',
+                     'Cena z cennika głównego','identyfikator promocji','Data obowiązywania promocji od',
                  'Data obowiązywania promocji do','Rodzaj warunku płatnosci','Ilość Klientów','Nazwa grupy promocyjnej',
                  'MPK','Grupa klientów','Czy KDW']
         
