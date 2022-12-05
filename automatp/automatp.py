@@ -55,7 +55,7 @@ if rap_prom is not None or ipra is not None:
         ### Nazwy kolumn, które mają zostać
         kolumny=['Nazwa Promocji','Nr producenta sprzedażowego','Nazwa producenta sprzedażowego',
                  'Skład (SPR,SGL)','Czy dopuszcza rabat kontraktowy','Id Materiału','Nazwa Materiału',
-                 'Rabat Promocyjny','Cena z cennika głównego','identyfikator promocji','data obowiązywania promocji od',
+                 'Rabat Promocyjny','Cena z cennika głównego','identyfikator promocji','Data obowiązywania promocji od',
                  'Data obowiązywania promocji do','Rodzaj warunku płatnosci','Ilość Klientów','Nazwa grupy promocyjnej',
                  'MPK','Grupa klientów','Czy KDW']
         
