@@ -228,7 +228,7 @@ if rap_prom is not None or ipra is not None:
             #worksheet = writer.sheets
             format1 = workbook.add_format({'num_format': '0.00'}) 
             #worksheet.set_column('A:A', None, format1)  
-            writer.save()
+            writer.close()
             processed_data = output.getvalue()
             return processed_data
         df_xlsx = to_excel()
