@@ -114,7 +114,7 @@ if rap_prom is not None or ipra is not None:
         PBWH['IPRA BWH vs P+'] = np.where(PBWH['Rabat IPRA'].isna(),None,np.where(PBWH['Rabat IPRA']>=PBWH['Rabat Promocyjny'],1,0))
         PWHA['IPRA WHA vs P+'] = np.where(PWHA['Rabat IPRA1'].isna(),None,np.where(PWHA['Rabat IPRA1']>=PWHA['Rabat Promocyjny'],1,0))
         PWHA['EO vs P+'] = np.where(PWHA['Rabat IPRA'].isna(),None,np.where(PWHA['Rabat IPRA']>=PWHA['Rabat Promocyjny'],1,0))
-        
+        st.dataframe(PWHA)
         ### Modyfikacje stylistyczne
         PWHA=PWHA.rename(columns={'Rabat IPRA1':'Rabat IPRA WHA'})
         PWHA=PWHA.rename(columns={'Rabat IPRA':'Rabat EO'})
